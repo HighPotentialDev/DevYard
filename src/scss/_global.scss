@@ -1,0 +1,61 @@
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/fonts/Roboto.ttf);
+}
+
+@font-face {
+    font-family: RobotoCondensed;
+    src: url(/assets/fonts/RobotoCondensed.ttf);
+}
+
+$global-padding: 1rem;
+$global-lg-radius: 1rem;
+$global-sm-radius: .5rem;
+
+$primary-theme: #6366F1;
+$secondary-theme: #EDEFFB;
+
+$primary-dark: #0F1728;
+$secondary-dark: #1E293B;
+$ternary-dark: #334155;
+
+$primary-font: Roboto;
+$secondary-font: RobotoCondensed;
+
+$mobile-screen: 430px;
+$tablet-screen: 720px;
+$desktop-screen: 1366px;
+
+html {
+    font-size: 1em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    hyphens: auto;
+    user-select: none;
+    box-sizing: border-box;
+    -webkit-user-drag: none;
+    font-family: $primary-font, 'system-ui', sans-serif;
+}
+
+@mixin centerElement($direction: column){
+    display: flex;
+    justify-content: center;
+    flex-direction: $direction;
+}
+
+@mixin primaryBtn($background: $primary-theme, $padding: 1rem) {
+    padding: $padding;
+    font-size: .95em;
+    background: $background;
+    border-radius: $global-sm-radius;
+}
+
+@mixin ellipse($max-line: 3) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $max-line;
+    overflow: hidden;
+}
