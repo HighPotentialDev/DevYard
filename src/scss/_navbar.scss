@@ -1,0 +1,96 @@
+@use "./global" as *;
+
+#navbar {
+    background: $secondary-theme;
+
+    .navbar-content {
+        display: flex;
+        padding: 1rem;
+        align-items: center;
+        justify-content: space-between;
+
+        section {
+            &:nth-child(1) {
+                h1 {
+                    font-size: 1.8em;
+                }
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+            &:nth-child(3) {
+                .buttons {
+                    display: none;
+                }
+
+                .menuBtn {
+                    border: none;
+                    cursor: pointer;
+                    background: none;
+                    @include centerElement;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 900px) {
+    #navbar {
+
+        .navbar-content {
+            display: flex;
+            padding: 1rem;
+            align-items: center;
+            margin-inline: auto;
+            max-width: $desktop-screen;
+            justify-content: space-between;
+
+            section {
+                &:nth-child(2) {
+                    display: flex;
+
+                    ul {
+                        gap: 3rem;
+                        display: flex;
+                        align-items: center;
+                    
+                        li {
+                            cursor: pointer;
+                            list-style: none;
+
+                            a {
+                                color: #000;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(3) {
+                    .buttons {
+                        gap: .5rem;
+                        display: flex;
+                        align-items: center;
+
+                        button {
+                            @include primaryBtn;
+                            padding: .7rem 1.3rem;
+                        }
+
+                        button:nth-child(1) {
+                            border: 1px solid $primary-theme;
+                        }
+
+                        button:nth-child(2) {
+                            color: #000;
+                            background: #fff;
+                            border: 1px solid #ddd;
+                        }
+                    }
+
+                    .menuBtn { display: none; }
+                }
+            }
+        }
+    }
+}

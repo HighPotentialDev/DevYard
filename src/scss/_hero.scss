@@ -1,0 +1,179 @@
+@use "./global" as *;
+
+#hero-section {
+    padding-block: 2rem;
+
+    .hero-section-content {
+        gap: 2rem;
+        padding: 1rem;
+        display: grid;
+        margin-inline: auto;
+
+        section {
+            gap: 1rem;
+            display: grid;
+
+            &:nth-child(1) {
+                h1 {
+                    font-size: clamp(1.5em, 8vw, 3em);
+                    span { color: $primary-theme }
+                }
+                p {
+                    color: #555;
+                }
+
+                .ctas {
+                    gap: .5rem;
+                    display: grid;
+
+                    button {
+                        @include primaryBtn;
+                        border: 1px solid $primary-theme;
+
+                        &:nth-child(2) {
+                            color: #000;
+                            background: none;
+                            border: 1px solid #999;
+                        }
+                    }
+                }
+
+                .bottom-line {
+                    gap: 1.3rem;
+                    display: flex;
+                    align-items: center;
+
+                    .profiles {
+                        display: flex;
+                        align-items: center;
+
+                        .profile {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            border-radius: 50%;
+                            margin-right: -0.5rem;
+                            background: $primary-theme;
+                            box-shadow: 0 0 0 .15rem #fff;
+                        
+                            &:nth-child(2) { background: #10B981; }
+                        }
+                    }
+                    h3 {
+                        font-size: 1em;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                overflow: hidden;
+                max-height: 400px;
+            }
+        }
+
+    }
+
+
+    .hero-section-features {
+        padding: 1rem;
+        margin: 2rem 0;
+        display: grid;
+        gap: 2rem;
+
+        .features-header {
+            gap: .5rem;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .features-body {
+            gap: 1rem;
+            display: grid;
+
+            .feature {
+                gap: .8rem;
+                display: grid;
+                padding: 2rem 1.5rem;
+                background: #eee;
+                border-radius: $global-lg-radius;
+
+                section:nth-child(1) {
+                    gap: .5rem;
+                    display: flex;
+                    align-items: center;
+
+                    h2 {
+                        font-size: 1.2em;
+                    }
+
+                    p {
+                        font-size: .95em;
+                        color: #555;
+                    }
+                }
+
+                section:nth-child(3) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    p:nth-child(2) {
+                        color: $primary-theme;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 500px) {
+    #hero-section {
+        .hero-section-content {
+            padding: min(5rem, 8%);
+            max-width: $tablet-screen;
+
+            section:nth-child(1) {
+                .ctas {
+                    display: flex;
+                    align-items: center;
+
+                    button { padding: 1rem 2rem; }
+                }
+            }
+        }
+
+        .hero-section-features {
+            margin-inline: auto;
+            max-width: $tablet-screen;
+            padding-inline: min(5rem, 8%);
+        }
+    }
+}
+
+
+@media (min-width: 700px) {
+    .hero-section-features {
+        padding-inline: 1rem !important;
+        max-width: $desktop-screen !important;
+
+        .features-body {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    #hero-section {
+        .hero-section-content {
+            display: grid;
+            place-items: center;
+            padding-inline: min(5rem, 3%);
+            max-width: $desktop-screen;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}

@@ -1,2 +1,14 @@
 @use "global.scss" as *;
 @use "navbar.scss";
+@use "hero.scss";
+
+body {
+    display: flex;
+    height: 100dvh;
+    overflow: hidden;
+    flex-direction: column;
+
+    #main {
+        overflow-y: auto;
+    }
+}

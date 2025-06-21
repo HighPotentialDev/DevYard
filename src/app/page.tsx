@@ -1,7 +1,10 @@
+import Navbar from "@/components/modules/Navbar";
+import Hero from "@/components/views/Hero";
+
 export default function Page() {
     return(
         <div id="app">
-            <h1>WELCOME TO DEVYARD</h1>
+            <Hero />
         </div>
     )
 }

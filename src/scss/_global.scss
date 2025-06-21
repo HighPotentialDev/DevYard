@@ -46,9 +46,12 @@ html {
     flex-direction: $direction;
 }
 
-@mixin primaryBtn($background: $primary-theme, $padding: 1rem) {
+@mixin primaryBtn($color: #fff, $background: $primary-theme, $padding: 1rem) {
+    border: none;
+    color: $color;
+    cursor: pointer;
+    font-size: .9em;
     padding: $padding;
-    font-size: .95em;
     background: $background;
     border-radius: $global-sm-radius;
 }
